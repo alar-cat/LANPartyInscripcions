@@ -1,2 +1,2 @@
-# lanparty-form
-Ripoll LAN Party registration form.
+# lanparty-ripoll
+Ripoll LAN Party code.
