@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Inscripció LAN Party Ripoll</title>
+    <h1>Inscripció LAN Party Ripoll</h1>
+    <meta http-equiv="refresh" content="10; url=http://www.lanpartyripoll.cat" />
+  </head>
+
+<?php
+include 'conn.php';
+
+$nom = htmlspecialchars($_POST["nom"]);
+$cognoms = htmlspecialchars($_POST["cognoms"]);
+$email = htmlspecialchars($_POST["email"]);
+$telefon = htmlspecialchars($_POST["telefon"]);
+$categoria = htmlspecialchars($_POST["categoria"]);
+if ($categoria == "CSGO") {
+  $equip = htmlspecialchars($_POST['equipCSGO']);
+  if ($equip == "") {
+    $equip = htmlspecialchars($_POST['equipCSGOmulti']);
+  }
+}
+elseif ($categoria == "LoL") {
+  $equip = htmlspecialchars($_POST['equipLoL']);
+  if ($equip == "") {
+    $equip = htmlspecialchars($_POST['equipLoLmulti']);
+  }
+}
+elseif ($categoria == "FIFA16") {
+  $equip = "---";
+}
+//echo $equip;
+
+$nick = htmlspecialchars($_POST["nick"]);
+$dni = htmlspecialchars($_POST["dni"]);
+$naixement = htmlspecialchars($_POST["dianaixement"]) . "/" . htmlspecialchars($_POST["mesnaixement"]) . "/" . htmlspecialchars($_POST["anynaixement"]);
+//echo $naixement;
+$poblacio = htmlspecialchars($_POST["poblacio"]);
+
+$order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
+
+
+if (mysqli_query($conn, $order)) {
+    echo "<p>T'has inscrit correctament, gràcies!<p>";
+
+}
+else {
+    echo "Error: " . $order . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+
+?>
+
+</html>
+
