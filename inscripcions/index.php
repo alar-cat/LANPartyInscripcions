@@ -68,7 +68,7 @@ include 'conn.php';
 
 	<!-- Inici data naixement -->
 	      <h5>Data naixement:</h5>
-			<h6>Els menors de 18 anys hauran d'entregar el <a href="http://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
+			<h6>Els menors de 18 anys hauran d'entregar el <a href="https://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
 	      <select name="dianaixement" required>
 	        <option selected="selected">---</option>
 
@@ -130,6 +130,7 @@ include 'conn.php';
 
 					?>
 					<h5>Equip CS:GO:</h5>
+					<h6>Sisplau, no t'inscriguis a equips als quals no pertanys!</h6>
 					<select id="equipCSGOmulti" name="equipCSGOmulti" required>
 						<option value="nou">Crea un equip nou</option>
 	          <option selected="selected">---</option>
@@ -160,6 +161,7 @@ include 'conn.php';
 						mysqli_close($conn);
 					?>
 					<h5>Clan:</h5>
+					<h6>Sisplau, no t'inscriguis a clans als quals no pertanys!</h6>
 					<select id="equipLoLmulti" name="equipLoLmulti" required>
 						<option value="nouLoL">Crea un clan nou</option>
 	          <option selected="selected">---</option>
@@ -175,8 +177,15 @@ include 'conn.php';
 				</div>
 <!-- Fi config  LoL-->
 
+<!-- Afegir jocs a partir d'aquí. També caldrà modificar el JS. -->
+
+
+
+
+<!-- -->
+
 				<br>
-				<h5><input name="terms" required type="checkbox" > Accepto les <a href="http://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
+				<h5><input name="terms" required type="checkbox" > Accepto les <a href="https://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
 				<br>
 				<div>
 					<input type="submit" value="Enviar"></input>
