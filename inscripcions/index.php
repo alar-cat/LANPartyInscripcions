@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-include 'conn.php';
+include "conn.php";
+include "conf-games.php";
 ?>
 <html>
 	<head>
@@ -13,7 +14,7 @@ include 'conn.php';
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-		<!-- Millor posa els estils a un document a part, jo soc vago. A més, els comentaris en PHP, que així no es poden veure si analitzes la pàgina des del navegador. -->
+		<!-- Millor posar els estils a un document a part. -->
 		<style type="text/css">
 		.margin-v-small {
 			margin-top: 5px;
@@ -68,7 +69,7 @@ include 'conn.php';
 
 	<!-- Inici data naixement -->
 	      <h5>Data naixement:</h5>
-			<h6>Els menors de 18 anys hauran d'entregar el <a href="https://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
+			<h6>Els menors de 18 anys hauran d'entregar el <a href="http://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
 	      <select name="dianaixement" required>
 	        <option selected="selected">---</option>
 
@@ -116,35 +117,19 @@ include 'conn.php';
 	        <option value="LoL">LoL</option>
 	      </select>
 
-				<!-- <hr/> -->
 <!-- Config CS:GO -->
-				<div id="CSGO">
-					<?php
-						$csgo = array();
-						$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
-						while ($row = $sql->fetch_assoc()) {
-							if (!in_array($row['equip'],$csgo)) {
-								$csgo[] = $row['equip'];
-							}
-						}
+	
+	<?php 
+	$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
+	/*
+	Després, jo borraria les altres i ho posaria tot en funcions dintre del conf-games.php, com a l'exemple del csgo.
 
-					?>
-					<h5>Equip CS:GO:</h5>
-					<h6>Sisplau, no t'inscriguis a equips als quals no pertanys!</h6>
-					<select id="equipCSGOmulti" name="equipCSGOmulti" required>
-						<option value="nou">Crea un equip nou</option>
-	          <option selected="selected">---</option>
-	          <?php
-	            foreach ($csgo as $equip) {
-	          ?>
-	            <option value="<?php echo $equip; ?>"><?php echo $equip; }?></option>
-	        </select>
-				</div>
+	et deixo l'exemple, tmb, de <?=?>. Fa el mateix que un <?php echo ;?>
 
-				<div id="nou">
-					<h5>Nom del nou equip CS:GO:</h5>
-		      <input type="text" name="equipCSGO">
-				</div>
+	*/ ?>
+	
+	<?=getCsgoConfig($sql)?>
+	
 <!-- Fi config CS:GO -->
 
 <!-- Inici config LOL -->
@@ -161,7 +146,6 @@ include 'conn.php';
 						mysqli_close($conn);
 					?>
 					<h5>Clan:</h5>
-					<h6>Sisplau, no t'inscriguis a clans als quals no pertanys!</h6>
 					<select id="equipLoLmulti" name="equipLoLmulti" required>
 						<option value="nouLoL">Crea un clan nou</option>
 	          <option selected="selected">---</option>
@@ -177,15 +161,8 @@ include 'conn.php';
 				</div>
 <!-- Fi config  LoL-->
 
-<!-- Afegir jocs a partir d'aquí. També caldrà modificar el JS. -->
-
-
-
-
-<!-- -->
-
 				<br>
-				<h5><input name="terms" required type="checkbox" > Accepto les <a href="https://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
+				<h5><input name="terms" required type="checkbox" > Accepto les <a href="http://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
 				<br>
 				<div>
 					<input type="submit" value="Enviar"></input>
