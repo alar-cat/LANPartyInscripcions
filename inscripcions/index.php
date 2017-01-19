@@ -13,6 +13,7 @@ include "includes/conf-games.php";
 
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/categories.js" async></script>
 
 		<!-- Millor posar els estils a un document a part. -->
 		<style type="text/css">
@@ -33,6 +34,7 @@ include "includes/conf-games.php";
 			padding-left: 0;
 		}
 		</style>
+		
 	</head>
 	<body>
 		<?php
@@ -169,7 +171,4 @@ include "includes/conf-games.php";
 			</form>
 		</div>
 	</body>
-
-	<script type="text/javascript" src="js/categories.js"></script>
-
 </html>
