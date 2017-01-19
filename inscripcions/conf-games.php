@@ -12,7 +12,7 @@ function getCsgoConfig($sql)
 
 	$csgoconfig = '<div id="CSGO">
 	<h5>Equip CS:GO:</h5>
-	<select>
+	<select id="equipCSGOmulti" name="equipCSGOmulti" required>
 	<option value="nou">Crea un equip nou</option>
 	<option selected="selected">---</option>';
 
