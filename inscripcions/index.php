@@ -28,6 +28,7 @@ include "includes/conf-games.php";
 			<h1>Inscripció LAN Party Ripoll</h1>
 			<h6>Data límit: 31 d'octubre.</h6>
 			<h6>Total inscrits: <?php echo $inscrits; ?></h6>
+			<h6>Preu:</h6>
 			<h6>Tots els camps són obligatoris.</h6>
 			<br>
 
