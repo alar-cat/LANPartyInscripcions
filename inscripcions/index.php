@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-include "conn.php";
-include "conf-games.php";
+include "includes/conn.php";
+include "includes/conf-games.php";
 ?>
 <html>
 	<head>
@@ -55,7 +55,7 @@ include "conf-games.php";
 				$anys = range(2016,1900);
 
 			 ?>
-			
+
 		  <form method="post" action="input.php" id="inscripcions" name="inscripcions">
 		  <h5>Nom:</h5>
 	      <input type="text" name="nom" required>
@@ -118,18 +118,15 @@ include "conf-games.php";
 	      </select>
 
 <!-- Config CS:GO -->
-	
-	<?php 
-	$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
-	/*
-	Després, jo borraria les altres i ho posaria tot en funcions dintre del conf-games.php, com a l'exemple del csgo.
 
-	et deixo l'exemple, tmb, de <?=?>. Fa el mateix que un <?php echo ;?>
+	<?php
+		$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
+		echo getCsgoConfig($sql);
+		/*
+	 	<?=?> fa el mateix que un <?php echo ;?>
+		*/
+	?>
 
-	*/ ?>
-	
-	<?=getCsgoConfig($sql)?>
-	
 <!-- Fi config CS:GO -->
 
 <!-- Inici config LOL -->
@@ -167,67 +164,12 @@ include "conf-games.php";
 				<div>
 					<input type="submit" value="Enviar"></input>
 					<input type="reset" value="Reiniciar" onClick="amaga();">
-					
+
 				</div>
 			</form>
 		</div>
-
-		<script type="text/javascript">
-			function amaga() {
-			$("#CSGO").hide();
-			$("#LoL").hide();
-			$("#nou").hide();
-			$("#nouLoL").hide();
-		    }
-		    amaga();
-		
-			var anterior = "#" + $("#cat option:selected").val();
-			$(anterior).show();
-			var actual = "";
-
-			$("#cat").change(function() {
-				$("#nou").hide();
-				$("#nouLoL").hide();
-				actual = "#" + $("#cat option:selected").val();
-				$("#equipCSGOmulti").val("---");
-				$("#equipLoLmulti").val("---");
-
-				$(anterior).hide();
-				$(actual).show();
-				anterior = actual;
-				actual = "";
-			});
-
-			var	anterior1 = "#" + $("#equipCSGOmulti option:selected").val();
-			$(anterior1).show();
-			var actual1 = "";
-
-			$("#equipCSGOmulti").change(function() {
-				actual1 = "#" + $("#equipCSGOmulti option:selected").val();
-
-				$(anterior1).hide();
-				$(actual1).show();
-				anterior1 = actual1;
-				actual1 = "";
-
-			});
-
-			var anterior2 = "#" + $("#equipLoLmulti option:selected").val();
-			$(anterior2).show();
-			var actual2 = "";
-
-			$("#equipLoLmulti").change(function() {
-				actual2 = "#" + $("#equipLoLmulti option:selected").val();
-
-				$(anterior2).hide();
-				$(actual2).show();
-				anterior2 = actual2;
-				actual2 = "";
-
-			});
-
-
-		</script>
 	</body>
-</html>
 
+	<script type="text/javascript" src="js/categories.js"></script>
+
+</html>

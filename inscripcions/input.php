@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <title>Inscripció LAN Party Ripoll</title>
     <h1>Inscripció LAN Party Ripoll</h1>
-    <meta http-equiv="refresh" content="10; url=http://www.lanpartyripoll.cat" />
+    <meta http-equiv="refresh" content="10; url=https://www.lanpartyripoll.cat" />
   </head>
 
 <?php
-include 'conn.php';
+include "includes/conn.php";
 
 $nom = htmlspecialchars($_POST["nom"]);
 $cognoms = htmlspecialchars($_POST["cognoms"]);
@@ -75,4 +75,3 @@ mysqli_close($conn);
 ?>
 
 </html>
-
