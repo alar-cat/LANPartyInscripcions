@@ -1,0 +1,16 @@
+.margin-v-small {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.margin-v-med {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.margin-v-big {
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+.no-h-padding {
+	padding-right: 0;
+	padding-left: 0;
+}

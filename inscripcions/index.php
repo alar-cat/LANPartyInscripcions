@@ -10,30 +10,11 @@ include "includes/conf-games.php";
 
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
+		<link rel="stylesheet" href="css/style.css" />
 
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/categories.js" async></script>
-
-		<!-- Millor posar els estils a un document a part. -->
-		<style type="text/css">
-		.margin-v-small {
-			margin-top: 5px;
-			margin-bottom: 5px;
-		}
-		.margin-v-med {
-			margin-top: 30px;
-			margin-bottom: 30px;
-		}
-		.margin-v-big {
-			margin-top: 75px;
-			margin-bottom: 75px;
-		}
-		.no-h-padding {
-			padding-right: 0;
-			padding-left: 0;
-		}
-		</style>
 		
 	</head>
 	<body>
@@ -71,7 +52,7 @@ include "includes/conf-games.php";
 
 	<!-- Inici data naixement -->
 	      <h5>Data naixement:</h5>
-			<h6>Els menors de 18 anys hauran d'entregar el <a href="http://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
+			<h6>Els menors de 18 anys hauran d'entregar el <a href="https://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
 	      <select name="dianaixement" required>
 	        <option selected="selected">---</option>
 
@@ -113,7 +94,7 @@ include "includes/conf-games.php";
 
 	      <h5>Categoria:</h5>
 	      <select id="cat" name="categoria" required>
-					<option value="none" selected="selected">---</option>
+			<option value="none" selected="selected">---</option>
 	        <option value="CSGO">CS:GO</option>
 	        <option value="FIFA16">FIFA16</option>
 	        <option value="LoL">LoL</option>
