@@ -15,7 +15,7 @@ include "includes/conf-games.php";
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/categories.js" async></script>
-		
+
 	</head>
 	<body>
 		<?php
@@ -138,6 +138,7 @@ include "includes/conf-games.php";
 				</div>
 				<div id="nouLoL">
 					<h5>Nom del nou clan:</h5>
+					<h6>Sisplau, no t'inscriguis a un clan que no sigui el teu.</h6>
 		      <input type="text" name="equipLoL">
 				</div>
 <!-- Fi config  LoL-->
