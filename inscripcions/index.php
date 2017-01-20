@@ -127,6 +127,7 @@ include "includes/conf-games.php";
 						mysqli_close($conn);
 					?>
 					<h5>Clan:</h5>
+					<h6>Sisplau, no t'inscriguis a un clan que no sigui el teu.</h6>
 					<select id="equipLoLmulti" name="equipLoLmulti" required>
 						<option value="nouLoL">Crea un clan nou</option>
 	          <option selected="selected">---</option>
@@ -137,8 +138,7 @@ include "includes/conf-games.php";
 	        </select>
 				</div>
 				<div id="nouLoL">
-					<h5>Nom del nou clan:</h5>
-					<h6>Sisplau, no t'inscriguis a un clan que no sigui el teu.</h6>
+					<h5>Nom del nou clan:</h5>	
 		      <input type="text" name="equipLoL">
 				</div>
 <!-- Fi config  LoL-->
