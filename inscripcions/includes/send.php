@@ -3,10 +3,11 @@ function envia($email) {
   $assumpteInscrit = 'Inscripció LAN Party Ripoll';
   $assumpteAdmin = 'Nova inscripció a la LAN Party';
   $from = 'lanparty@ltec.cat';
-  $headers = "From: " . strip_tags('lanparty@ltec.cat') . "\r\n";
-  $headers .= "Reply-To: ". strip_tags('amarti@ltec.cat') . "\r\n";
+  $headers = "From: LAN Party Ripoll <lanparty@ltec.cat>\r\n";
+  $headers .= "Reply-To: Aniol Martí <amarti@ltec.cat>\r\n";
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+  $headers .= 'X-Mailer: PHP/' . phpversion();
   $message = '<html><body>';
   $message .= '<p>Gràcies per inscriure\'t a la LAN Party Ripoll!</p>';
   $message .= '<p>Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI i l\'autorització si ets menor d\'edat.</p>';
