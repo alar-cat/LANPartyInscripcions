@@ -10,6 +10,7 @@
 include "includes/conn.php";
 include "includes/send.php";
 
+// Agafo les dades del formulari.
 $nom = htmlspecialchars($_POST["nom"]);
 $cognoms = htmlspecialchars($_POST["cognoms"]);
 $email = htmlspecialchars($_POST["email"]);
@@ -30,15 +31,32 @@ elseif ($categoria == "LoL") {
 elseif ($categoria == "FIFA16") {
   $equip = "---";
 }
-//echo $equip;
 
 $nick = htmlspecialchars($_POST["nick"]);
 $dni = htmlspecialchars($_POST["dni"]);
 $naixement = htmlspecialchars($_POST["dianaixement"]) . "/" . htmlspecialchars($_POST["mesnaixement"]) . "/" . htmlspecialchars($_POST["anynaixement"]);
-//echo $naixement;
 $poblacio = htmlspecialchars($_POST["poblacio"]);
 
-$order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
+// Search DB
+$busca = mysqli_query($conn, "SELECT id FROM inscripcions WHERE dni = '$dni'");
+if($busca->num_rows == 0) {
+     $order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
+}
+else {
+    $resultat = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE dni = '$dni'");
+    $fila = $resultat->fetch_array(MYSQL_BOTH);
+    $inscrit = $fila[0];
+
+    if ($inscrit == "---") {
+      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = '$equip' WHERE dni = '$dni'";
+    }
+    elseif ($equip == "---") {
+      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria')";
+    }
+    else {
+      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = CONCAT(equip,'-$equip') WHERE dni = '$dni'";
+    }
+}
 
 // Si es poden insertar les dades a la base de dades s'envia un correu de confirmació a l'administrador i a l'inscrit.
 if (mysqli_query($conn, $order)) {

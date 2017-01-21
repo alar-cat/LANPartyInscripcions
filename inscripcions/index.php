@@ -25,6 +25,7 @@ include "includes/functions.php";
 			<h6>Data límit: 31 d'octubre.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
 			<h6>Preu:</h6>
+			<h6>Per inscriure's a més d'una categoria torni a omplir el formulari modificant aquest camp.</h6>
 			<h6>Tots els camps són obligatoris.</h6>
 			<br>
 
@@ -35,8 +36,7 @@ include "includes/functions.php";
 	      <h5>Cognoms:</h5>
 	      <input type="text" name="cognoms" required>
 
-	      <h5>Nick:</h5>
-				<h6>Nom d'usuari que utilitzes al joc.</h6>
+	      <h5>Àlies (nick):</h5>
 	      <input type="text" name="nick" required>
 
 	<!-- Inici data naixement -->
