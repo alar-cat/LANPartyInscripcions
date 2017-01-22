@@ -17,7 +17,7 @@ function generateQR($nom,$cognoms,$dni,$nick,$naixement) {
   $clau = "password";
   $ruta = "/var/www/lanpartyQR"; //Ruta per guardar els QRs.
   $encrypted = shell_exec('echo -n "' . $informacio . '" | openssl enc -aes-256-cbc -a -k ' . $clau);
-  echo $encrypted;
+  //echo $encrypted;
   QRcode::png($encrypted, "$ruta/$dni.png", 'L', 10, 2); // creates file
 
 }
