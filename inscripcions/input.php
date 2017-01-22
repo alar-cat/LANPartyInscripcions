@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>Inscripció LAN Party Ripoll</title>
     <h1>Inscripció LAN Party Ripoll</h1>
-    <!--<meta http-equiv="refresh" content="10; url=https://www.lanpartyripoll.cat" />-->
+    <meta http-equiv="refresh" content="10; url=https://www.lanpartyripoll.cat" />
   </head>
 
 <?php
