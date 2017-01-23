@@ -42,9 +42,21 @@ $poblacio = htmlspecialchars($_POST["poblacio"]);
 // Search DB
 $busca = mysqli_query($conn, "SELECT id FROM inscripcions WHERE dni = '$dni'");
 if($busca->num_rows == 0) {
-     $order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
-     generateQR($nom,$cognoms,$dni,$nick,$naixement);
+    $order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
+    // Si es poden insertar les dades a la base de dades s'envia un correu de confirmació a l'administrador i a l'inscrit.
+    if (mysqli_query($conn, $order)) {
+        $fullpath = generateQR($nom,$cognoms,$dni,$nick,$naixement);
+        envia($email,$fullpath,$dni);
+
+        echo "<p>T'has inscrit correctament, gràcies!<p>";
+    }
+
+    else {
+        echo "Error: " . $order . "<br>" . mysqli_error($conn);
+    }
+
 }
+
 else {
     $resultat = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE dni = '$dni'");
     $fila = $resultat->fetch_array(MYSQL_BOTH);
@@ -59,17 +71,17 @@ else {
     else {
       $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = CONCAT(equip,'-$equip') WHERE dni = '$dni'";
     }
+    // Si es poden insertar les dades a la base de dades es mostra un missatge que ho confirma.
+    if (mysqli_query($conn, $order)) {
+        echo "<p>T'has inscrit correctament a una nova categoria, gràcies!<p>";
+    }
+
+    else {
+        echo "Error: " . $order . "<br>" . mysqli_error($conn);
+    }
 }
 
-// Si es poden insertar les dades a la base de dades s'envia un correu de confirmació a l'administrador i a l'inscrit.
-if (mysqli_query($conn, $order)) {
-  envia($email);
-	echo "<p>T'has inscrit correctament, gràcies!<p>";
-}
 
-else {
-    echo "Error: " . $order . "<br>" . mysqli_error($conn);
-}
 
 mysqli_close($conn);
 
