@@ -19,10 +19,6 @@ function generateQR($nom,$cognoms,$dni,$nick,$naixement) {
     $encrypted = shell_exec('echo -n "' . $informacio . '" | openssl enc -aes-256-cbc -a -k ' . $clau);
     //echo $encrypted;
     QRcode::png($encrypted, "$ruta/$dni.png", 'L', 10, 2);
-    $cami = "$ruta/$dni.png";
-
-    return $cami;
-
 
 }
 
