@@ -84,7 +84,7 @@ include "includes/functions.php";
 				<h5><input name="terms" required type="checkbox" > Accepto les <a href="http://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
 				<br>
 				<div>
-					<input type="submit" value="Enviar"></input>
+					<input type="submit" value="Enviar">
 					<input type="reset" value="Reiniciar" onClick="amaga();">
 
 				</div>

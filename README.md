@@ -1,9 +1,47 @@
-# lanparty-ripoll
-Ripoll LAN Party code.
+LAN Party Ripoll
+===================
+Codi utilitzat per la gestió d'usuaris (inscripcions i assistència).
 
-For QR: sudo apt-get install php5-gd
+###Estat del codi:
+* **Inscripcions:** Estable.
+* **Lector QR:** Estable.
 
-Server-side: Stable.
 
-TODO:
-Explain the variables that can/must be changed.
+###Instal·lar paquets:
+
+* **Generar QR:** `sudo apt-get install php5-gd`
+* **Llibreria Tkinter:** `sudo apt-get install python3-tk`
+* **Zbar-tools:** `sudo apt-get install zbar-tools`
+
+
+###Paràmetres modificables:
+Llista de paràmetres ordenats per fitxers que s'han d'editar en funció de cada cas.
+
+####inscripcions/index.php
+* `Data límit:`
+* `Preu:`
+
+####inscripcions/index.php
+* `$secretfile`
+* `$fitxer`
+
+####inscripcions/includes/conn.php
+* `$servername`
+* `$username`
+* `$password`
+* `$database`
+
+####inscripcions/includes/qr.php
+* `$esdeveniment`
+* `$clau`
+* `$ruta`
+
+####inscripcions/includes/token.php
+* `$fitxer`
+
+####lector/includes/lector.py
+* `password`
+
+####Anotacions
+* La `$clau` del fitxer `qr.php` ha de ser la mateixa que el `password` del fitxer `lector.py`.
+* A aquests canvis cal afegir-hi els que fan referència a enllaços,  altres elements concrets de la LAN Party Ripoll (una mica per tot arreu) i correus-e (`send.php`).
