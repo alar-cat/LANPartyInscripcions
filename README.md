@@ -22,7 +22,7 @@ Llista de paràmetres ordenats per fitxers que s'han d'editar en funció de cada
 * `Data límit:`
 * `Preu:`
 
-####inscripcions/index.php
+####inscripcions/get_file.php
 * `$secretfile`
 * `$fitxer`
 
