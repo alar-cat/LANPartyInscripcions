@@ -52,7 +52,7 @@ if($busca->num_rows == 0) {
         echo "<p>Pots baixar el codi d'accés des d'aquest enllaç (també t'hem enviat una còpia per correu-e):</p>";
         $qr = genToken($dni);
         echo $qr;
-        envia($email,$qr);
+        enviasmtp($email,$qr);
       }
 
       else {
