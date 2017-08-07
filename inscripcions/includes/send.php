@@ -1,5 +1,5 @@
 <?php
-require_once "libs/inscripcions/vendor/autoload.php";
+require_once "libs/phpmailer/PHPMailer/PHPMailerAutoload.php";
 
 // Els correus enviats amb la funció mail() molts cops són interpretats com a spam.
 function envia($email,$qr) {

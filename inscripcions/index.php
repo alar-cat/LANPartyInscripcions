@@ -13,7 +13,7 @@ include "includes/functions.php";
 		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
 		<link rel="stylesheet" href="css/style.css" />
 
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/categories.js" async></script>
 

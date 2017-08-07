@@ -9,7 +9,7 @@ Codi utilitzat per la gestió d'usuaris (inscripcions i assistència).
 
 ###Instal·lar paquets:
 
-* **Generar QR:** `sudo apt-get install php5-gd`
+* **Generar QR:** `sudo apt-get install php-gd`
 * **Llibreria Tkinter:** `sudo apt-get install python3-tk`
 * **Fswebcam:** `sudo apt-get install fswebcam`
 * **Zbar-tools:** `sudo apt-get install zbar-tools`
