@@ -8,12 +8,13 @@ Codi utilitzat per la gestió d'usuaris (inscripcions i assistència).
 
 
 ### Instal·lar paquets:
------------------------
 * **Generar QR:** `sudo apt-get install php-gd`
 * **Llibreria Tkinter:** `sudo apt-get install python3-tk`
 * **Fswebcam:** `sudo apt-get install fswebcam`
 * **Zbar-tools:** `sudo apt-get install zbar-tools`
 
+### Llibreries:
+Cal instal·lar les llibreries manualment. A **inscripcions/includes/libs** hi ha els dos directoris amb un **INSTALL.md** on explica com instal·lar-les.
 
 ### Paràmetres modificables:
 
