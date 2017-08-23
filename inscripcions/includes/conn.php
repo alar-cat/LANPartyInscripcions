@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "lanpartyripoll";
-$password = "password";
+$password = "JLmUs4GW2ewdHJfs";
 $database = "lanparty";
 
 // Create connection

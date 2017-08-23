@@ -30,8 +30,17 @@ elseif ($categoria == "LoL") {
     $equip = htmlspecialchars($_POST['equipLoLmulti']);
   }
 }
-elseif ($categoria == "FIFA16") {
+elseif ($categoria == "Overwatch") {
+    $equip = htmlspecialchars($_POST['equipOverwatch']);
+    if ($equip == "") {
+        $equip = htmlspecialchars($_POST['equipOverwatchmulti']);
+    }
+}
+elseif ($categoria == "FIFA") {
   $equip = "---";
+}
+elseif ($categoria == "Smash") {
+    $equip = "---";
 }
 
 $nick = htmlspecialchars($_POST["nick"]);

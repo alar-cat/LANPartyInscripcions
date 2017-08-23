@@ -1,8 +1,10 @@
 function amaga() {
 			$("#CSGO").hide();
 			$("#LoL").hide();
+    		$("#Overwatch").hide();
 			$("#nou").hide();
 			$("#nouLoL").hide();
+    		$("#nouOverwatch").hide();
 		    }
 		    amaga();
 		
@@ -48,5 +50,19 @@ function amaga() {
 				$(actual2).show();
 				anterior2 = actual2;
 				actual2 = "";
+
+			});
+
+			var anterior3 = "#" + $("#equipOverwatchmulti option:selected").val();
+			$(anterior3).show();
+			var actual3 = "";
+
+			$("#equipOverwatchmulti").change(function() {
+    		actual3 = "#" + $("#equipOverwatchmulti option:selected").val();
+
+    		$(anterior3).hide();
+    		$(actual3).show();
+    		anterior3 = actual3;
+    		actual3 = "";
 
 			});

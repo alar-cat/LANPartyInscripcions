@@ -6,8 +6,8 @@ function envia($email,$qr) {
     $assumpteInscrit = 'Inscripció LAN Party Ripoll';
     $assumpteAdmin = 'Nova inscripció a la LAN Party';
     $from = 'info@lanpartyripoll.cat';
-    $headers = "From: LAN Party Ripoll <lanparty@ltec.cat>\r\n";
-    $headers .= "Reply-To: Aniol Martí <amarti@ltec.cat>\r\n";
+    $headers = "From: LAN Party Ripoll <info@lanpartyripoll.cat>\r\n";
+    $headers .= "Reply-To: Aniol Martí <amarti@nnbox.org>\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
@@ -33,7 +33,7 @@ function enviasmtp($email,$qr) {
     $mail = new PHPMailer;
     $mail->CharSet = "UTF-8";
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'mail.ltec.cat';  // Specify main and backup SMTP servers
+    $mail->Host = 'mail.xarxacatala.cat';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'info@lanpartyripoll.cat';                 // SMTP username
     $mail->Password = 'password';                           // SMTP password
@@ -42,7 +42,7 @@ function enviasmtp($email,$qr) {
 
     $mail->setFrom('info@lanpartyripoll.cat', 'LAN Party Ripoll');
     $mail->addAddress($email);               // Name is optional
-    $mail->addReplyTo('amarti@ltec.cat', 'Aniol Martí');
+    $mail->addReplyTo('amarti@nnbox.org', 'Aniol Martí');
 
     $mail->isHTML(true);                                  // Set email format to HTML
 

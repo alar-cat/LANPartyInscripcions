@@ -22,9 +22,9 @@ include "includes/functions.php";
 
 		<div class="container margin-v-big">
 			<h1>Inscripció LAN Party Ripoll</h1>
-			<h6>Data límit: 31 d'octubre.</h6>
+			<h6>Data límit: 15 de novembre.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
-			<h6>Preu:</h6>
+			<h6>Preu: 8€/participant</h6>
 			<h6>Per inscriure's a més d'una categoria torni a omplir el formulari modificant aquest camp.</h6>
 			<h6>Tots els camps són obligatoris.</h6>
 			<br>
@@ -59,26 +59,35 @@ include "includes/functions.php";
 
 	      <h5>Categoria:</h5>
 	      <select id="cat" name="categoria" required>
-					<option value="none" selected="selected">---</option>
-	        <option value="CSGO">CS:GO</option>
-	        <option value="FIFA16">FIFA16</option>
-	        <option value="LoL">LoL</option>
+              <option value="none" selected="selected">---</option>
+	          <option value="CSGO">CS:GO</option>
+	          <option value="FIFA">FIFA</option>
+	          <option value="LoL">LoL</option>
+              <option value="Smash">Super Smash Bros Wii U</option>
+              <option value="Overwatch">Overwatch</option>
 	      </select>
 
 <!-- Config CS:GO -->
 	<?php
-		$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
-		echo getCsgoConfig($sql);
+    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
+    echo getCsgoConfig($sql);
 	?>
 <!-- Fi config CS:GO -->
 
-<!-- Inici config LOL -->
+<!-- Inici config LoL -->
 	<?php
-		$sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='LoL'");
-		echo getLolConfig($sql);
-		mysqli_close($conn);
+    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='LoL'");
+    echo getLolConfig($sql);
 	?>
-<!-- Fi config  LoL-->
+<!-- Fi config LoL-->
+
+<!-- Inici config Overwatch -->
+     <?php
+     $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='Overwatch'");
+     echo getOverwatchConfig($sql);
+     mysqli_close($conn);
+     ?>
+<!-- Fi config Overwatch-->
 
 				<br>
 				<h5><input name="terms" required type="checkbox" > Accepto les <a href="http://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>

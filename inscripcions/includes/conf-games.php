@@ -60,3 +60,33 @@ function getLolConfig($sql) {
 
 		return $lolconfig;
 }
+
+function getOverwatchConfig($sql) {
+
+    $over = array();
+    while ($row = $sql->fetch_assoc()) {
+        if (!in_array($row['equip'],$over)) {
+            $over[] = $row['equip'];
+        }
+    }
+
+    $overconfig = '<div id="Overwatch">
+		<h5>Equip:</h5>
+		<h6>Sisplau, no t\'inscriguis a un equip que no sigui el teu.</h6>
+		<select id="equipOverwatchmulti" name="equipOverwatchmulti" required>
+		<option value="nouOverwatch">Crea un equip nou</option>
+		<option selected="selected">---</option>';
+
+    foreach ($over as $equip) {
+        $overconfig .= '<option value="'. $equip .' ">' . $equip . '</option>';
+    }
+
+    $overconfig .= '</select>
+		</div>
+		<div id="nouOverwatch">
+		<h5>Nom del nou equip:</h5>
+		<input type="text" name="equipOverwatch">
+		</div>';
+
+    return $overconfig;
+}
