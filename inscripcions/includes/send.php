@@ -13,7 +13,7 @@ function envia($email,$qr) {
     $headers .= 'X-Mailer: PHP/' . phpversion();
     $message = '<html><body>';
     $message .= '<p>Gràcies per inscriure\'t a la LAN Party Ripoll!</p>';
-    $message .= '<p>Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI i l\'autorització si ets menor d\'edat.</p>';
+    $message .= '<p>Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI, el codi QR i l\'autorització si ets menor d\'edat.</p>';
     $message .= '<p>Enllaç per baixar el codi d\'accés:</p>';
     $message .= "$qr";
     $message .= '<br>';
@@ -43,12 +43,13 @@ function enviasmtp($email,$qr) {
     $mail->setFrom('info@lanpartyripoll.cat', 'LAN Party Ripoll');
     $mail->addAddress($email);               // Name is optional
     $mail->addReplyTo('amarti@nnbox.org', 'Aniol Martí');
+    $mail->addBCC('amarti@nnbox.org', 'Aniol Martí');
 
     $mail->isHTML(true);                                  // Set email format to HTML
 
     $mail->Subject = 'Inscripció LAN Party Ripoll';
     $mail->Body    = "<p>Gràcies per inscriure't a la LAN Party Ripoll!</p>
-                      <p>Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI i l'autorització si ets menor d'edat.</p>
+                      <p>Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI, el codi QR i l'autorització si ets menor d'edat.</p>
                       <p>Enllaç per baixar el codi d'accés:</p>
                       {$qr}
                       <br><br>
@@ -56,7 +57,7 @@ function enviasmtp($email,$qr) {
                       <p>L'organització de la LAN Party</p>";
 
     $mail->AltBody = "Gràcies per inscriure't a la LAN Party Ripoll!
-                      Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI i l'autorització si ets menor d'edat.
+                      Recorda que has de portar el teu ordinador amb els perifèrics corresponents, el DNI, el codi QR i l'autorització si ets menor d'edat.
                       Enllaç per baixar el codi d'accés:
                       {$qr}
 

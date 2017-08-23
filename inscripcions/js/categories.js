@@ -15,8 +15,10 @@ function amaga() {
 			$("#cat").change(function() {
 				$("#nou").hide();
 				$("#nouLoL").hide();
+                $("#nouOverwatch").hide();
 				$("#equipCSGOmulti").val("---");
 				$("#equipLoLmulti").val("---");
+                $("#equipOverwatchmulti").val("---");
                 actual = "#" + $("#cat option:selected").val();
 
 				$(anterior).hide();
