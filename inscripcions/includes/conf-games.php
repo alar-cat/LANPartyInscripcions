@@ -1,10 +1,9 @@
 <?php
 
 function getCsgoConfig($sql) {
-
 	$csgo = array();
 	while ($row = $sql->fetch_assoc()) {
-		if (!in_array($row['equip'],$csgo)) {
+		if (!in_array($row['equip'],$csgo) && ($row['equip'] != '---')) {
 			$csgo[] = $row['equip'];
 		}
 	}
@@ -32,10 +31,9 @@ function getCsgoConfig($sql) {
 }
 
 function getLolConfig($sql) {
-
 	$lol = array();
 	while ($row = $sql->fetch_assoc()) {
-		if (!in_array($row['equip'],$lol)) {
+		if (!in_array($row['equip'],$lol) && ($row['equip'] != '---')) {
 			$lol[] = $row['equip'];
 		}
 	}
@@ -62,10 +60,9 @@ function getLolConfig($sql) {
 }
 
 function getOverwatchConfig($sql) {
-
     $over = array();
     while ($row = $sql->fetch_assoc()) {
-        if (!in_array($row['equip'],$over)) {
+        if (!in_array($row['equip'],$over) && ($row['equip'] != '---')) {
             $over[] = $row['equip'];
         }
     }

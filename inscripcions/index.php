@@ -67,27 +67,17 @@ include "includes/functions.php";
               <option value="Overwatch">Overwatch</option>
 	      </select>
 
-<!-- Config CS:GO -->
+<!-- Config jocs -->
 	<?php
-    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='CSGO'");
+    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
     echo getCsgoConfig($sql);
-	?>
-<!-- Fi config CS:GO -->
-
-<!-- Inici config LoL -->
-	<?php
-    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='LoL'");
+    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
     echo getLolConfig($sql);
-	?>
-<!-- Fi config LoL-->
-
-<!-- Inici config Overwatch -->
-     <?php
-     $sql = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE categoria='Overwatch'");
-     echo getOverwatchConfig($sql);
-     mysqli_close($conn);
-     ?>
-<!-- Fi config Overwatch-->
+    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
+    echo getOverwatchConfig($sql);
+    mysqli_close($conn);
+    ?>
+<!-- Fi config jocs-->
 
 				<br>
 				<h5><input name="terms" required type="checkbox" > Accepto les <a href="http://www.lanpartyripoll.cat/reglament/" target="_blank">condicions de participació</a>.</h5>
