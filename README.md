@@ -35,12 +35,13 @@ Llista de paràmetres ordenats per fitxers que s'han d'editar en funció de cada
 * `$database`
 
 #### inscripcions/includes/qr.php
-* `$esdeveniment`
-* `$clau`
 * `$ruta`
 
 #### inscripcions/includes/token.php
 * `$fitxer`
+
+#### inscripcions/includes/functions.php
+* `$esdeveniment`
 
 #### lector/includes/lector.py
 * `password`

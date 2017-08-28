@@ -11,6 +11,7 @@ include "includes/conn.php";
 include "includes/send.php";
 include "includes/qr.php";
 include "includes/token.php";
+include "includes/functions.php";
 
 // Agafo les dades del formulari.
 $nom = htmlspecialchars($_POST["nom"]);
@@ -51,12 +52,15 @@ $poblacio = htmlspecialchars($_POST["poblacio"]);
 
 // Search DB
 $busca = mysqli_query($conn, "SELECT id FROM inscripcions WHERE dni = '$dni'");
+
 if($busca->num_rows == 0) {
-    $order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement')";
+    $major = getMajor($naixement);
+    $pagat = "No";
+    $order = "INSERT INTO inscripcions (nom,cognom,email,telefon,categoria,equip,nick,dni,poblacio,naixement,major,pagat) VALUES ('$nom','$cognoms','$email','$telefon','$categoria','$equip','$nick','$dni','$poblacio','$naixement','$major','$pagat')";
     // Si es poden insertar les dades a la base de dades s'envia un correu de confirmació a l'administrador i a l'inscrit.
     if ($dni != "") {
       if (mysqli_query($conn, $order)) {
-        generateQR($nom,$cognoms,$dni,$nick,$naixement);
+        generateQR($dni,$conn);
         echo "<p>T'has inscrit correctament, gràcies!<p>";
         echo "<p>Pots baixar el codi d'accés des d'aquest enllaç (també t'hem enviat una còpia per correu-e):</p>";
         $qr = genToken($dni);
@@ -84,10 +88,10 @@ else {
       $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = '$equip' WHERE dni = '$dni'";
     }
     elseif ($equip == "---") {
-      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria')";
+      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria') WHERE dni = '$dni'";
     }
     else {
-      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = CONCAT(equip,'-$equip') WHERE dni = '$dni'";
+      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = '$equip' WHERE dni = '$dni'";
     }
     // Si es poden insertar les dades a la base de dades es mostra un missatge que ho confirma.
     if (mysqli_query($conn, $order)) {

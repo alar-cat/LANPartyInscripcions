@@ -42,4 +42,18 @@ function getInscrits($conn) {
   return $inscrits;
 }
 
+function getMajor($naixement) {
+    // Es comprova si és major d'edat.
+    $major = "No";
+    $esdeveniment = "17-11-2017"; //Data de la festa per calcular si és major d'edat.
+    $naixement = str_replace('/', '-', $naixement);
+    $temps = strtotime($naixement);
+
+    if ($temps < (strtotime($esdeveniment) - (18 * 60 * 60 * 24 * 365.25))) {
+        $major = "Sí";
+    }
+
+    return $major;
+}
+
 ?>
