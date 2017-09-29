@@ -4,7 +4,7 @@ Codi utilitzat per la gestió d'usuaris (inscripcions i assistència).
 
 ### Estat del codi:
 * **Inscripcions:** Estable.
-* **Lector QR:** Estable.
+* **Lector QR:** En desenvolupament.
 
 
 ### Instal·lar paquets:
