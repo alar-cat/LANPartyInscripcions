@@ -43,6 +43,9 @@ elseif ($categoria == "FIFA") {
 elseif ($categoria == "Smash") {
     $equip = "---";
 }
+elseif ($categoria == "Pokemon") {
+    $equip = "---";
+}
 
 $nick = htmlspecialchars($_POST["nick"]);
 $dni = htmlspecialchars($_POST["dni"]);

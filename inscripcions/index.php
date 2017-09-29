@@ -62,6 +62,7 @@ include "includes/functions.php";
               <option value="none" selected="selected">---</option>
 	          <option value="CSGO">CS:GO</option>
 	          <option value="FIFA">FIFA</option>
+              <option value="Pokemon">Pokemon Sol/Luna</option>
 	          <option value="LoL">LoL</option>
               <option value="Smash">Super Smash Bros Wii U</option>
               <option value="Overwatch">Overwatch</option>
