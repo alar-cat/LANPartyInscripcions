@@ -31,6 +31,6 @@ if (isset($_GET['codi'])) {
     }
 }
 
-mysqli_close($con);
+mysqli_close($conn);
 
 ?>
