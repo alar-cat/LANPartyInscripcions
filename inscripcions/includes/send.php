@@ -1,5 +1,5 @@
 <?php
-require_once "libs/phpmailer/PHPMailer/PHPMailerAutoload.php";
+require_once "libs/phpmailer/PHPMailer/src/PHPMailer.php";
 
 // Els correus enviats amb la funció mail() molts cops són interpretats com a spam.
 function envia($email,$qr) {
@@ -42,8 +42,8 @@ function enviasmtp($email,$qr) {
 
     $mail->setFrom('info@lanpartyripoll.cat', 'LAN Party Ripoll');
     $mail->addAddress($email);               // Name is optional
-    $mail->addReplyTo('amarti@nnbox.org', 'Aniol Martí');
-    $mail->addBCC('amarti@nnbox.org', 'Aniol Martí');
+    $mail->addReplyTo('aniol.marti@riseup.net', 'Aniol Martí');
+    $mail->addBCC('aniol.marti@riseup.net', 'Aniol Martí');
 
     $mail->isHTML(true);                                  // Set email format to HTML
 
@@ -53,7 +53,7 @@ function enviasmtp($email,$qr) {
                       <p>Enllaç per baixar el codi d'accés:</p>
                       {$qr}
                       <br><br>
-                      <p>Ens veiem el dia 5,</p>
+                      <p>Ens veiem el dia 20,</p>
                       <p>L'organització de la LAN Party</p>";
 
     $mail->AltBody = "Gràcies per inscriure't a la LAN Party Ripoll!
@@ -61,7 +61,7 @@ function enviasmtp($email,$qr) {
                       Enllaç per baixar el codi d'accés:
                       {$qr}
 
-                      Ens veiem el dia 5,
+                      Ens veiem el dia 20,
                       L'organització de la LAN Party";
 
     if(!$mail->send()) {

@@ -1,70 +1,32 @@
 function amaga() {
-			$("#CSGO").hide();
-			$("#LoL").hide();
-    		$("#Overwatch").hide();
+			$("#equips").hide();
 			$("#nou").hide();
-			$("#nouLoL").hide();
-    		$("#nouOverwatch").hide();
-		    }
-		    amaga();
-		
-			var anterior = "#" + $("#cat option:selected").val();
-			$(anterior).show();
-			var actual = "";
+    		$("#equipMulti").val("---");
+}
+amaga();
 
-			$("#cat").change(function() {
-				$("#nou").hide();
-				$("#nouLoL").hide();
-                $("#nouOverwatch").hide();
-				$("#equipCSGOmulti").val("---");
-				$("#equipLoLmulti").val("---");
-                $("#equipOverwatchmulti").val("---");
-                actual = "#" + $("#cat option:selected").val();
+var actual = "";
 
-				$(anterior).hide();
-				$(actual).show();
-				anterior = actual;
-				actual = "";
-			});
+$("#cat").change(function() {
 
-			var	anterior1 = "#" + $("#equipCSGOmulti option:selected").val();
-			$(anterior1).show();
-			var actual1 = "";
+	actual = $("#cat :selected").val();
 
-			$("#equipCSGOmulti").change(function() {
-				actual1 = "#" + $("#equipCSGOmulti option:selected").val();
+    if (actual == "CSGO" || actual == "LoL") {
+        $("#equips").show();
+    }
+    else {
+        amaga();
+    }
+});
 
-				$(anterior1).hide();
-				$(actual1).show();
-				anterior1 = actual1;
-				actual1 = "";
+$("#equipMulti").change(function() {
 
-			});
+    actual = $("#equipMulti :selected").val();
 
-			var anterior2 = "#" + $("#equipLoLmulti option:selected").val();
-			$(anterior2).show();
-			var actual2 = "";
-
-			$("#equipLoLmulti").change(function() {
-				actual2 = "#" + $("#equipLoLmulti option:selected").val();
-
-				$(anterior2).hide();
-				$(actual2).show();
-				anterior2 = actual2;
-				actual2 = "";
-
-			});
-
-			var anterior3 = "#" + $("#equipOverwatchmulti option:selected").val();
-			$(anterior3).show();
-			var actual3 = "";
-
-			$("#equipOverwatchmulti").change(function() {
-    		actual3 = "#" + $("#equipOverwatchmulti option:selected").val();
-
-    		$(anterior3).hide();
-    		$(actual3).show();
-    		anterior3 = actual3;
-    		actual3 = "";
-
-			});
+    if (actual == "nou") {
+    	$("#nou").show();
+	}
+	else {
+        $("#nou").hide();
+	}
+});

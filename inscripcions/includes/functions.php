@@ -45,7 +45,7 @@ function getInscrits($conn) {
 function getMajor($naixement) {
     // Es comprova si és major d'edat.
     $major = "No";
-    $esdeveniment = "17-11-2017"; //Data de la festa per calcular si és major d'edat.
+    $esdeveniment = "20-04-2018"; //Data de la festa per calcular si és major d'edat.
     $naixement = str_replace('/', '-', $naixement);
     $temps = strtotime($naixement);
 

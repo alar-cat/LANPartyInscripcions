@@ -22,10 +22,9 @@ include "includes/functions.php";
 
 		<div class="container margin-v-big">
 			<h1>Inscripció LAN Party Ripoll</h1>
-			<h6>Data límit: 15 de novembre.</h6>
+			<h6>Data límit: 19 d'abril.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
 			<h6>Preu: 8€/participant</h6>
-			<h6>Per inscriure's a més d'una categoria torni a omplir el formulari modificant aquest camp.</h6>
 			<h6>Tots els camps són obligatoris.</h6>
 			<br>
 
@@ -58,24 +57,20 @@ include "includes/functions.php";
 	      <input type="text" name="poblacio" required>
 
 	      <h5>Categoria:</h5>
-	      <select id="cat" name="categoria" required>
+	      <select id="cat" name="categoria[]" multiple="multiple" required>
               <option value="none" selected="selected">---</option>
 	          <option value="CSGO">CS:GO</option>
 	          <option value="FIFA">FIFA</option>
               <option value="Pokemon">Pokemon Sol/Luna</option>
 	          <option value="LoL">LoL</option>
               <option value="Smash">Super Smash Bros Wii U</option>
-              <option value="Overwatch">Overwatch</option>
+              <!--<option value="Overwatch">Overwatch</option>-->
 	      </select>
 
 <!-- Config jocs -->
 	<?php
     $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
-    echo getCsgoConfig($sql);
-    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
-    echo getLolConfig($sql);
-    $sql = mysqli_query($conn, "SELECT equip FROM inscripcions");
-    echo getOverwatchConfig($sql);
+    echo getEquips($sql);
     mysqli_close($conn);
     ?>
 <!-- Fi config jocs-->

@@ -18,33 +18,13 @@ $nom = htmlspecialchars($_POST["nom"]);
 $cognoms = htmlspecialchars($_POST["cognoms"]);
 $email = htmlspecialchars($_POST["email"]);
 $telefon = htmlspecialchars($_POST["telefon"]);
-$categoria = htmlspecialchars($_POST["categoria"]);
-if ($categoria == "CSGO") {
-  $equip = htmlspecialchars($_POST['equipCSGO']);
-  if ($equip == "") {
-    $equip = htmlspecialchars($_POST['equipCSGOmulti']);
-  }
-}
-elseif ($categoria == "LoL") {
-  $equip = htmlspecialchars($_POST['equipLoL']);
-  if ($equip == "") {
-    $equip = htmlspecialchars($_POST['equipLoLmulti']);
-  }
-}
-elseif ($categoria == "Overwatch") {
-    $equip = htmlspecialchars($_POST['equipOverwatch']);
-    if ($equip == "") {
-        $equip = htmlspecialchars($_POST['equipOverwatchmulti']);
-    }
-}
-elseif ($categoria == "FIFA") {
-  $equip = "---";
-}
-elseif ($categoria == "Smash") {
-    $equip = "---";
-}
-elseif ($categoria == "Pokemon") {
-    $equip = "---";
+$categories = $_POST["categoria"];
+
+$categoria = htmlspecialchars(implode("-", $categories));
+
+$equip = htmlspecialchars($_POST['equipC']);
+if ($equip == "") {
+    $equip = htmlspecialchars($_POST['equipMulti']);
 }
 
 $nick = htmlspecialchars($_POST["nick"]);
@@ -83,30 +63,9 @@ if($busca->num_rows == 0) {
 }
 
 else {
-    $resultat = mysqli_query($conn, "SELECT equip FROM inscripcions WHERE dni = '$dni'");
-    $fila = $resultat->fetch_array(MYSQL_BOTH);
-    $inscrit = $fila[0];
-
-    if ($inscrit == "---") {
-      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = '$equip' WHERE dni = '$dni'";
-    }
-    elseif ($equip == "---") {
-      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria') WHERE dni = '$dni'";
-    }
-    else {
-      $order = "UPDATE inscripcions SET categoria = CONCAT(categoria,'-$categoria'), equip = '$equip' WHERE dni = '$dni'";
-    }
-    // Si es poden insertar les dades a la base de dades es mostra un missatge que ho confirma.
-    if (mysqli_query($conn, $order)) {
-        echo "<p>T'has inscrit correctament a una nova categoria, gràcies!<p>";
-    }
-
-    else {
-        echo "Error: " . $order . "<br>" . mysqli_error($conn);
-    }
+    echo "<p>Aquesta persona ja està inscrita. Tornant al formulari...</p>";
+    header("Refresh:5; url=index.php");
 }
-
-
 
 mysqli_close($conn);
 
