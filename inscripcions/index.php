@@ -57,6 +57,7 @@ include "includes/functions.php";
 	      <input type="text" name="poblacio" required>
 
 	      <h5>Categoria:</h5>
+              <h6>Marcar totes les categories a les quals et vulguis inscriure.</h6>
 	      <select id="cat" name="categoria[]" multiple="multiple" required>
               <option value="none" selected="selected">---</option>
 	          <option value="CSGO">CS:GO</option>
