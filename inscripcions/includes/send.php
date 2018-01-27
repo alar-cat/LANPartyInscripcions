@@ -1,5 +1,10 @@
 <?php
-require_once "libs/phpmailer/PHPMailer/src/PHPMailer.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require "libs/phpmailer/PHPMailer/src/Exception.php";
+require "libs/phpmailer/PHPMailer/src/PHPMailer.php";
+require "libs/phpmailer/PHPMailer/src/SMTP.php";
 
 // Els correus enviats amb la funció mail() molts cops són interpretats com a spam.
 function envia($email,$qr) {
