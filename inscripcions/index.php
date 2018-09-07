@@ -22,7 +22,7 @@ include "includes/functions.php";
 
 		<div class="container margin-v-big">
 			<h1>Inscripció LAN Party Ripoll</h1>
-			<h6>Data límit: 19 d'abril.</h6>
+			<h6>Data límit: 25 d'abril.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
 			<h6>Preu: 8€/participant</h6>
 			<h6>Tots els camps són obligatoris.</h6>
