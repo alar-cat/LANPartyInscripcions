@@ -22,7 +22,7 @@ include "includes/functions.php";
 
 		<div class="container margin-v-big">
 			<h1>Inscripció LAN Party Ripoll</h1>
-			<h6>Data límit: 25 d'abril.</h6>
+			<h6>Data límit: 2 de maig.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
 			<h6>Preu: 8€/participant</h6>
 			<h6>Tots els camps són obligatoris.</h6>
@@ -40,7 +40,7 @@ include "includes/functions.php";
 
 	<!-- Inici data naixement -->
 	      <h5>Data naixement:</h5>
-				<h6>Els menors de 18 anys hauran d'entregar el <a href="https://www.lanpartyripoll.cat/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
+				<h6>Els menors de 18 anys hauran d'entregar el <a href="https://ripoll.alar.cat/fitxers/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
 	      <?=getData()?> <!-- Fa el mateix que obrir php i cridar echo funció -->
 	<!-- Final data naixement -->
 
