@@ -64,7 +64,7 @@ include "includes/functions.php";
 	          <option value="FIFA">FIFA</option>
               <option value="Pokemon">Pokemon Sol/Luna</option>
 	          <option value="LoL">LoL</option>
-              <option value="Smash">Super Smash Bros Wii U</option>
+              <option value="Smash">Super Smash Bros. Ultimate</option>
               <!--<option value="Overwatch">Overwatch</option>-->
 	      </select>
 
