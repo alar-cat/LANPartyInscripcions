@@ -15,7 +15,7 @@ function getEquips($sql) {
 	<option value="nou">Crea un equip nou</option>';
 
     foreach ($equips as $equip) {
-        $config .= '<option value="'. $equip .' ">' . $equip . '</option>';
+        $config .= '<option value="'.$equip.'">'.$equip.'</option>';
     }
 
     $config .= '</select>
