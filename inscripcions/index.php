@@ -40,7 +40,7 @@ include "includes/functions.php";
 
 	<!-- Inici data naixement -->
 	      <h5>Data naixement:</h5>
-				<h6>Els menors de 18 anys hauran d'entregar el <a href="https://ripoll.alar.cat/fitxers/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
+	      <h6>Els menors de 18 anys hauran d'entregar el <a href="https://ripoll.alar.cat/fitxers/autoritzaciomenors.pdf" target="_blank">full d'autorització</a> en arribar a la LAN Party.</h6>
 	      <?=getData()?> <!-- Fa el mateix que obrir php i cridar echo funció -->
 	<!-- Final data naixement -->
 
@@ -59,13 +59,12 @@ include "includes/functions.php";
 	      <h5>Categoria:</h5>
               <h6>Marcar totes les categories a les quals et vulguis inscriure.</h6>
 	      <select id="cat" name="categoria[]" multiple="multiple" required>
-              <option value="none" selected="selected">---</option>
-	          <option value="CSGO">CS:GO</option>
-	          <option value="FIFA">FIFA</option>
-              <option value="Pokemon">Pokémon Ultrasol/Ultraluna</option>
-	          <option value="LoL">LoL</option>
-              <option value="Smash">Super Smash Bros. Ultimate</option>
-              <option value="Ordinadors">Muntatge d'ordinadors</option>
+		<option value="CSGO">CS:GO</option>
+		<option value="FIFA">FIFA</option>
+		<option value="Pokemon">Pokémon Ultrasol/Ultraluna</option>
+		<option value="LoL">LoL</option>
+		<option value="Smash">Super Smash Bros. Ultimate</option>
+		<option value="Ordinadors">Muntatge d'ordinadors</option>
 	      </select>
 
 <!-- Config jocs -->
