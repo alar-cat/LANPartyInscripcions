@@ -22,9 +22,9 @@ include "includes/functions.php";
 
 		<div class="container margin-v-big">
 			<h1>Inscripció LAN Party Ripoll</h1>
-			<h6>Data límit: 2 de maig.</h6>
+			<h6>Data límit: 30 d'abril.</h6>
 			<h6>Total inscrits: <?=getInscrits($conn)?></h6>
-			<h6>Preu: 8€/participant</h6>
+			<h6>Preu: 10€/participant</h6>
 			<h6>Tots els camps són obligatoris.</h6>
 			<br>
 
@@ -60,8 +60,8 @@ include "includes/functions.php";
               <h6>Marcar totes les categories a les quals et vulguis inscriure.</h6>
 	      <select id="cat" name="categoria[]" multiple="multiple" required>
 		<option value="CSGO">CS:GO</option>
-		<option value="FIFA">FIFA</option>
-		<option value="Pokemon">Pokémon Ultrasol/Ultraluna</option>
+		<option value="Mario Kart">Mario Kart</option>
+		<option value="Pokemon">Pokémon Escudo/Espada</option>
 		<option value="LoL">LoL</option>
 		<option value="Smash">Super Smash Bros. Ultimate</option>
 		<option value="Ordinadors">Muntatge d'ordinadors</option>
